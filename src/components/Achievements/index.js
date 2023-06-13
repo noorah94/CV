@@ -51,7 +51,7 @@ export default function Achievements() {
       rgba(0, 0, 0, 0.0)
     ),
     url("https://cutewallpaper.org/21/dark-purple-backgrounds/4K-Ultra-HD-Dark-Purple-Background.jpg")`}
-        h={["200px", "700px"]}
+        //h={["200px", "700px"]}
         p={"4%"}
         // color="white"
         backgroundPosition="center"

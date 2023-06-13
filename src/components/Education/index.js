@@ -44,7 +44,7 @@ export default function Education() {
      
     url("https://cutewallpaper.org/21/dark-purple-backgrounds/4K-Ultra-HD-Dark-Purple-Background.jpg")`}
       w="100%"
-      h={["200px", "700px"]}
+      //h={["200px", "700px"]}
       p={"4%"}
       // color="white"
       backgroundPosition="center"
