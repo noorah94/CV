@@ -37,17 +37,17 @@ function Desc() {
             borderStyle=" none none none solid"
             borderColor={"white"}
             p="1%"
-            w={["45%", "70%"]}
+            w={["80%", "45%"]}
             // color={"#9540AC"}
             textShadow="1px 1px #ff0000"
             // textShadow="1px 1px #ffffff"
           >
-            <Box fontSize={["300%", "300%"]}>{name}</Box>
-            <Box fontSize={["200%", "100%"]}>{job}</Box>
+            <Box fontSize={["200%", "300%"]}>{name}</Box>
+            <Box fontSize={["100%", "200%"]}>{job}</Box>
           </Box>
           <Box
-            fontSize="100%"
-            w="70%"
+            fontSize={["70%", "100%"]}
+            w={["100%", "70%"]}
             // textShadow="1px 1px #ff0000"
             marginTop={"5%"}
           >

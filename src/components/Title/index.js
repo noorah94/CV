@@ -5,7 +5,7 @@ export default function Title({ title }) {
   return (
     <code>
       <Heading
-        fontSize="300%"
+        fontSize={["180%", "300%"]}
         textAlign={"center"}
         fontWeight="bold"
         marginBottom={"5%"}

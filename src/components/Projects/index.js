@@ -37,7 +37,7 @@ export default function Projects() {
     >
       <Title title="Projects" />
       <code>
-        <SimpleGrid columns={4} spacing={10}>
+        <SimpleGrid columns={[1, 2, 3, 4]} spacing={10}>
           {itmes.map((item) => (
             <Box
               borderWidth={"1px"}

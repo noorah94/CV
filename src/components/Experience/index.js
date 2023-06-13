@@ -40,12 +40,12 @@ export default function Experience() {
       >
         <Title title="Experience" />
         <code>
-          <SimpleGrid columns={2} spacing={10}>
+          <SimpleGrid columns={[2]} spacing={10}>
             <Box
               borderWidth="medium"
               borderStyle=" none solid none none"
               borderColor={"gold"}
-              height="80px"
+              //height="80px"
               p="3%"
               color={"gold"}
             >
@@ -59,7 +59,7 @@ export default function Experience() {
               <Heading textAlign={"right"}>({items[1].time})</Heading>
             </Box>
             <Box p="4%">
-              <Heading fontSize="200%" fontWeight={"bold"}>
+              <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
                 {items[1].job}
               </Heading>
 
@@ -71,7 +71,7 @@ export default function Experience() {
               </Box>
             </Box>
             <Box p="4%">
-              <Heading fontSize="200%" fontWeight={"bold"}>
+              <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
                 {items[0].job}
               </Heading>
 
@@ -86,7 +86,7 @@ export default function Experience() {
               borderWidth="medium"
               borderStyle=" none none none solid"
               borderColor={"gold"}
-              height="80px"
+              //height="80px"
               p="3%"
               color={"gold"}
             >

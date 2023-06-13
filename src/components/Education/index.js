@@ -1,5 +1,6 @@
 import { Box, Heading, Flex, Text, Spacer } from "@chakra-ui/react";
 import React from "react";
+import Title from "../Title";
 
 export default function Education() {
   const items = [
@@ -51,31 +52,30 @@ export default function Education() {
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
     >
+      <Title title={"Education"} />
       <code>
-        <Heading fontSize="300%" textAlign={"center"} fontWeight="bold">
-          Education
-        </Heading>
-
-        <Flex p="5%">
+        <Box p="5%" display={["block", "flex"]}>
           {items.map((item, index) => (
             <>
-              <Box w={"40%"}>
-                <Heading fontSize="300%" fontWeight="bold">
+              <Box w={["90%", "40%"]}>
+                <Heading fontSize={["200%", "300%"]} fontWeight="bold">
                   0{index + 1}.
                 </Heading>
-                <Box fontSize={"150%"} fontWeight="bold">
+                <Box fontSize={["80%", "150%"]} fontWeight="bold">
                   {item.name}{" "}
                 </Box>
-                <Box display="flex">
+                <Box display="flex" fontSize={["60%", "150%"]}>
                   <Box>( {item.grade} )</Box>
                   <Box> - {item.university} </Box>
                 </Box>
-                <Box p={"6%"}>{item.desc}</Box>
+                <Box p={"6%"} fontSize={["60%", "150%"]}>
+                  {item.desc}
+                </Box>
               </Box>
               <Spacer />
             </>
           ))}
-        </Flex>
+        </Box>
       </code>
     </Box>
   );
