@@ -1,22 +1,58 @@
-import {
-  SimpleGrid,
-  Box,
-  Heading,
-  Flex,
-  Spacer,
-  Badge,
-} from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading, Flex, Badge } from "@chakra-ui/react";
 import React from "react";
 import Title from "../Title";
 
 export default function Projects() {
   const itmes = [
-    { title: "Weather Application", desc: "", tools: ["Flutter", "Rest API"] },
-    { title: "Todo Application", desc: "", tools: ["Flutter"] },
-    { title: "Quizzes Application", desc: "", tools: ["Flutter"] },
-    { title: "News Application", desc: "", tools: ["Flutter", "Rest API"] },
-    { title: "Chat Application", desc: "", tools: ["Flutter", "Firebase"] },
-    { title: "Game", desc: "", tools: ["React"] },
+    {
+      title: "Weejhaty website",
+      link: "https://weejhaty2.onrender.com/",
+      github: "https://github.com/MP-Project-Noorah",
+      tools: ["React", "Express.js", "MongoDB", "Rest API"],
+    },
+    {
+      title: "Game website",
+      link: "https://game-kvj5.onrender.com",
+      github: "https://github.com/noorah15/Cap1",
+      tools: ["React"],
+    },
+    {
+      title: "Historical mosques website",
+      link: "https://noorah94.github.io/mosques/mosques.html",
+      github: "https://github.com/noorah15/U01P01",
+      tools: ["html"],
+    },
+    {
+      title: "Flash Chat Application",
+      link: "none",
+      github: "https://github.com/noorah94/FlashChat",
+      tools: ["Flutter", "Rest API", "Firebase"],
+    },
+    {
+      title: "Weight Application",
+      link: "none",
+      github: "https://github.com/noorah94/Weight",
+      tools: ["Flutter"],
+    },
+    {
+      title: "Weather Application",
+      link: "none",
+      github: "https://github.com/noorah94/Weather",
+      tools: ["Flutter", "Rest API"],
+    },
+    {
+      title: "Todo Application with Provider lib",
+      link: "none",
+      github: "https://github.com/noorah94/TodoWithProvider",
+      tools: ["Flutter"],
+    },
+    {
+      title: "Todo Application with Bloc lib",
+      link: "none",
+      github: "https://github.com/noorah94/todoWithBloc",
+      tools: ["Flutter"],
+    },
+
     // { title: "", desc: "", tools: [] },
   ];
   //<Image src="https://i.pinimg.com/originals/fa/36/0e/fa360e5c573f1fa9b59f561b645c51ae.gif" />
@@ -37,7 +73,7 @@ export default function Projects() {
     >
       <Title title="Projects" />
       <code>
-        <SimpleGrid columns={[1, 2, 3, 4]} spacing={10}>
+        <SimpleGrid columns={[1, 2, 3]} spacing={10}>
           {itmes.map((item) => (
             <Box
               borderWidth={"1px"}
@@ -49,6 +85,17 @@ export default function Projects() {
             >
               <Heading textAlign={"center"}>{item.title}</Heading>
               <hr style={{ color: "gold" }} />
+              <Heading>
+                link:{" "}
+                {item.link == "none" ? (
+                  "none"
+                ) : (
+                  <a href={item.link}>click here</a>
+                )}
+              </Heading>
+              <Heading>
+                github: <a href={item.github}>click here</a>
+              </Heading>
               <Flex p="3%">
                 Tools:
                 {/* {progarmming[index]} */}
