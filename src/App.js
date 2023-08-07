@@ -12,6 +12,7 @@ import Projects from "./components/Projects";
 import Achievements from "./components/Achievements";
 import Experience from "./components/Experience";
 import Camps from "./components/Camps";
+import MBS from "./components/MBS";
 
 function App() {
   let components = [<Header />, <Desc />, <Tools />, <Education />, <Footer />];
@@ -23,10 +24,11 @@ function App() {
           path="/"
           element={
             <>
-              <Desc /> <Education /> <Achievements /> <Experience />{" "}
-              <Projects />
+              {/* <MBS /> */}
+              <Desc />
+              <Education /> <Achievements /> <Experience /> <Projects />
               {/* <Contact /> */}
-              {/* <Footer /> */}
+              <Footer />
             </>
           }
         />

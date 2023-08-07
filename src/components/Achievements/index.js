@@ -1,22 +1,13 @@
-import {
-  Box,
-  Image,
-  Table,
-  Thead,
-  Tr,
-  Tbody,
-  Th,
-  Td,
-  TableContainer,
-} from "@chakra-ui/react";
+import { Box, Image, Heading } from "@chakra-ui/react";
 import React from "react";
 import Title from "../Title";
 import "./style.css";
+import { CgExternal } from "react-icons/cg";
 
 export default function Achievements() {
   const items = [
     {
-      name: "Graduation project",
+      name: "Graduation project - A Mobile Device Pattern Password for Elderly and Blindly People Using Camouflage Patterns",
       placeName: "Qassim University",
       rank: 1,
       info: (
@@ -33,12 +24,15 @@ export default function Achievements() {
             people to know the quality of security and usability of the system
             and testing the system on various segments of society.
           </li>
-          <li>
-            More info about project:
-            <a href="https://drive.google.com/drive/folders/138dbHiiainHHvy_OrpSAInSYPSWdjfA1?usp=sharing">
-              click here
-            </a>
-          </li>
+          <Box display="flex">
+            <li>More info about project: </li>
+            <Heading fontSize="70%">
+              <a href="https://drive.google.com/drive/folders/138dbHiiainHHvy_OrpSAInSYPSWdjfA1?usp=sharing">
+                click here
+              </a>
+            </Heading>
+            <CgExternal />
+          </Box>
         </>
       ),
     },

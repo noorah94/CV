@@ -1,6 +1,7 @@
 import { Box, Heading, Flex, Text, Spacer } from "@chakra-ui/react";
 import React from "react";
 import Title from "../Title";
+import { CgExternal } from "react-icons/cg";
 
 export default function Education() {
   const items = [
@@ -21,13 +22,17 @@ export default function Education() {
       university: "Qassim University",
       desc: (
         <>
-          - 9 hours and semester date: 2020. <br />- Projects:
+          - 9 hours and semester date: 2020. <br />
+          <Box display="flex">
+            - Projects:
+            <Heading fontSize="70%">
+              <a href="https://drive.google.com/drive/folders/1P_ZNDS6grg_Xxsrt-jcAieFuEREdnMaE?sp=sharing">
+                click here
+              </a>
+            </Heading>
+            <CgExternal />
+          </Box>
           <br />
-          {
-            <a href="https://drive.google.com/drive/folders/1P_ZNDS6grg_Xxsrt-jcAieFuEREdnMaE?sp=sharing">
-              https://drive.google.com/drive/folders/1P_ZNDS6grg_Xxsrt-jcAieFuEREdnMaE?sp=sharing
-            </a>
-          }
         </>
       ),
     },

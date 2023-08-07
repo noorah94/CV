@@ -1,6 +1,16 @@
-import { SimpleGrid, Box, Heading, Flex, Badge } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  Box,
+  Heading,
+  Flex,
+  Badge,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 import React from "react";
 import Title from "../Title";
+import { BsGithub, BsLink45Deg } from "react-icons/bs";
+import { CgExternal } from "react-icons/cg";
 
 export default function Projects() {
   const itmes = [
@@ -17,16 +27,17 @@ export default function Projects() {
       tools: ["React"],
     },
     {
-      title: "Historical mosques website",
-      link: "https://noorah94.github.io/mosques/mosques.html",
-      github: "https://github.com/noorah15/U01P01",
-      tools: ["html"],
+      title: "T2 News Application",
+      link: "none",
+      github: "https://github.com/noorah94/NewsApp",
+      tools: ["Flutter", "Rest API", "local storage"],
     },
+
     {
       title: "Flash Chat Application",
       link: "none",
-      github: "https://github.com/noorah94/FlashChat",
-      tools: ["Flutter", "Rest API", "Firebase"],
+      github: "https://github.com/noorah94/FlashChatApp",
+      tools: ["Flutter", "Rest API", "Firebase", "Animation"],
     },
     {
       title: "Weight Application",
@@ -37,8 +48,14 @@ export default function Projects() {
     {
       title: "Weather Application",
       link: "none",
-      github: "https://github.com/noorah94/Weather",
+      github: "https://github.com/noorah94/WeatherApp",
       tools: ["Flutter", "Rest API"],
+    },
+    {
+      title: "Historical mosques website",
+      link: "https://noorah94.github.io/mosques/index.html",
+      github: "https://github.com/noorah15/U01P01",
+      tools: ["html", "css", "javascript"],
     },
     {
       title: "Todo Application with Provider lib",
@@ -50,6 +67,18 @@ export default function Projects() {
       title: "Todo Application with Bloc lib",
       link: "none",
       github: "https://github.com/noorah94/todoWithBloc",
+      tools: ["Flutter"],
+    },
+    {
+      title: "Simple Piano Application",
+      link: "none",
+      github: "https://github.com/noorah94/simplePianoApp",
+      tools: ["Flutter"],
+    },
+    {
+      title: "Questions Application",
+      link: "none",
+      github: "https://github.com/noorah94/QuestionsApp",
       tools: ["Flutter"],
     },
 
@@ -73,7 +102,7 @@ export default function Projects() {
     >
       <Title title="Projects" />
       <code>
-        <SimpleGrid columns={[1, 2, 3]} spacing={10}>
+        <SimpleGrid columns={[1, null, 2, null, 3]} spacing={10}>
           {itmes.map((item) => (
             <Box
               borderWidth={"1px"}
@@ -83,21 +112,41 @@ export default function Projects() {
               //borderRadius={"3xl"}
               //height="80px"
             >
-              <Heading textAlign={"center"}>{item.title}</Heading>
+              <Heading
+                textAlign={"center"}
+                p="1%"
+                textShadow="1px 1px #ff0000"
+                fontSize={"120%"}
+                fontWeight={"bold"}
+              >
+                {item.title}
+              </Heading>
               <hr style={{ color: "gold" }} />
-              <Heading>
-                link:{" "}
+              <Box display="flex" p="1%" fontSize={"90%"}>
+                <Heading fontWeight={"bold"}>Link: </Heading>
+                {/* <FaLink /> */}
                 {item.link == "none" ? (
-                  "none"
+                  <Heading fontSize="90%">none</Heading>
                 ) : (
-                  <a href={item.link}>click here</a>
+                  <>
+                    <Heading fontSize="70%">
+                      <a href={item.link}>click here</a>
+                    </Heading>
+
+                    <CgExternal />
+                  </>
                 )}
-              </Heading>
-              <Heading>
-                github: <a href={item.github}>click here</a>
-              </Heading>
-              <Flex p="3%">
-                Tools:
+              </Box>
+              <Box display="flex" p="1%">
+                <Heading fontWeight={"bold"}>GitHub </Heading> <BsGithub />:{" "}
+                <Heading fontSize="70%">
+                  <a href={item.github}>click here</a>
+                </Heading>
+                <CgExternal />
+              </Box>{" "}
+              <Flex p="1%">
+                <Heading fontWeight={"bold"}>Tools: </Heading>
+
                 {/* {progarmming[index]} */}
                 {item.tools.map((item, ind) => (
                   <>
