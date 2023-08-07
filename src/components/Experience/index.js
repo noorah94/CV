@@ -18,8 +18,8 @@ export default function Experience() {
       company: "T2",
       time: "2023/03 - Present",
       info: [
-        "Developing applications with Flutter",
-        "Developing with Firebase",
+        "Developing applications with Flutter for android & iphone",
+        "Developing with Firebase, rest APIs, local storage and animation",
       ],
     },
   ];
