@@ -16,10 +16,21 @@ export default function Experience() {
     {
       job: "Mobile applications developer",
       company: "T2",
-      time: "2023/03 - Present",
+      time: "2023/03 - 2023/07",
       info: [
-        "Developing applications with Flutter for android & iphone",
-        "Developing with Firebase, rest APIs, local storage and animation",
+        "Developing applications with Flutter for android & iphone.",
+        "Developing with Firebase, rest APIs, local storage and animation.",
+      ],
+    },
+    {
+      job: "Mobile applications developer",
+      company: "Arabic Computer Systems",
+      time: "2023/09 - Present",
+      info: [
+        "Developing applications with Flutter for android & iphone.",
+        "Developing with google map, rest APIs, local storage, state management, animation and other.",
+        "Upload applications to App Store and Google Play.",
+        "Create solutions to solve cybersecurity attacks.",
       ],
     },
   ];
@@ -41,6 +52,30 @@ export default function Experience() {
         <Title title="Experience" />
         <code>
           <SimpleGrid columns={[2]} spacing={10}>
+            <Box p="4%">
+              <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
+                {items[2].job}
+              </Heading>
+
+              <hr style={{ color: "white" }} />
+              <Box marginTop={"4%"}>
+                {items[2].info.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </Box>
+            </Box>
+            <Box
+              borderWidth="medium"
+              borderStyle=" none none none solid"
+              borderColor={"gold"}
+              //height="80px"
+              p="3%"
+              color={"gold"}
+            >
+              <Heading fontSize="300%">3</Heading>
+              <Heading fontSize="100%"> {items[2].company} company</Heading>
+              <Heading>({items[2].time})</Heading>
+            </Box>
             <Box
               borderWidth="medium"
               borderStyle=" none solid none none"

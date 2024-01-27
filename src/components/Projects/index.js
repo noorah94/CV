@@ -13,7 +13,14 @@ import { BsGithub, BsLink45Deg } from "react-icons/bs";
 import { CgExternal } from "react-icons/cg";
 
 export default function Projects() {
+  //Qassim Municipality
   const itmes = [
+    {
+      title: "Qassim Municipality Application (iOS)",
+      link: "https://apps.apple.com/us/app/%D8%A3%D9%85%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%82%D8%B5%D9%8A%D9%85/id997312328?ls=1",
+      github: "none",
+      tools: ["Flutter"],
+    },
     {
       title: "Weejhaty website",
       link: "https://weejhaty2.onrender.com/",
@@ -139,10 +146,17 @@ export default function Projects() {
               </Box>
               <Box display="flex" p="1%">
                 <Heading fontWeight={"bold"}>GitHub </Heading> <BsGithub />:{" "}
-                <Heading fontSize="70%">
-                  <a href={item.github}>click here</a>
-                </Heading>
-                <CgExternal />
+                {item.github == "none" ? (
+                  <Heading fontSize="90%">none</Heading>
+                ) : (
+                  <>
+                    <Heading fontSize="70%">
+                      <a href={item.github}>click here</a>
+                    </Heading>
+
+                    <CgExternal />
+                  </>
+                )}
               </Box>{" "}
               <Flex p="1%">
                 <Heading fontWeight={"bold"}>Tools: </Heading>
