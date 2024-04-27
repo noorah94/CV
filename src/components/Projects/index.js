@@ -22,6 +22,12 @@ export default function Projects() {
       tools: ["Flutter"],
     },
     {
+      title: "Qassim Municipality Application (android)",
+      link: "https://play.google.com/store/apps/details?id=sa.gov.qassim",
+      github: "none",
+      tools: ["Flutter"],
+    },
+    {
       title: "Weejhaty website",
       link: "https://weejhaty2.onrender.com/",
       github: "https://github.com/MP-Project-Noorah",
@@ -99,7 +105,7 @@ export default function Projects() {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.0)
     ),
-    url("https://cutewallpaper.org/21/dark-purple-backgrounds/4K-Ultra-HD-Dark-Purple-Background.jpg")`}
+    url("https://t3.ftcdn.net/jpg/01/85/75/08/360_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg")`}
       // h={["200px", "700px"]}
       p={"4%"}
       // color="white"

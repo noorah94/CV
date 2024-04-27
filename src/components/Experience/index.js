@@ -41,7 +41,7 @@ export default function Experience() {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.0)
     ),
-    url("https://cutewallpaper.org/21/dark-purple-backgrounds/4K-Ultra-HD-Dark-Purple-Background.jpg")`}
+    url("https://t3.ftcdn.net/jpg/01/85/75/08/360_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg")`}
         // h={["200px", "700px"]}
         p={"4%"}
         // color="white"
