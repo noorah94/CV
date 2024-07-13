@@ -24,7 +24,7 @@ export default function Experience() {
     },
     {
       job: "Mobile applications developer",
-      company: "Arabic Computer Systems",
+      company: "Qassim Municipality",
       time: "2023/09 - Present",
       info: [
         "Developing applications with Flutter for android & iphone.",
