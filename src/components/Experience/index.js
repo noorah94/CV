@@ -6,7 +6,7 @@ export default function Experience() {
   const items = [
     {
       job: "Technical Support",
-      company: "New Horizons Institute",
+      company: "New Horizons Institute company",
       time: "2016/07 - 2016/09",
       info: [
         "A collaborative training when I was studying at Qassim University and its duration was 8 weeks.",
@@ -15,7 +15,7 @@ export default function Experience() {
     },
     {
       job: "Mobile applications developer",
-      company: "T2",
+      company: "T2 company",
       time: "2023/03 - 2023/07",
       info: [
         "Developing applications with Flutter for android & iphone.",
@@ -126,7 +126,7 @@ export default function Experience() {
               color={"gold"}
             >
               <Heading fontSize="300%">1</Heading>
-              <Heading fontSize="100%"> {items[0].company} company</Heading>
+              <Heading fontSize="100%"> {items[0].company} </Heading>
               <Heading>({items[0].time})</Heading>
             </Box>
           </SimpleGrid>
