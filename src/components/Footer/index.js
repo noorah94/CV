@@ -13,7 +13,7 @@ function Footer() {
               {" "}
               <MdEmail />
             </a>
-            <a href="https://www.linkedin.com/in/%D9%86%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D9%8A%D9%85%D9%8A%D8%AF-37206a260/">
+            <a href="www.linkedin.com/in/noorah-almohaimeed-نورة-المحيميد-37206a260">
               {" "}
               <FaLinkedinIn />
             </a>
