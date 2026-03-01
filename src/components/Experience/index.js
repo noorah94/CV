@@ -1,5 +1,5 @@
 import React from "react";
-import { SimpleGrid, Box, Heading } from "@chakra-ui/react";
+import { SimpleGrid, Box, Heading, Grid, GridItem } from "@chakra-ui/react";
 import Title from "../Title";
 
 export default function Experience() {
@@ -24,7 +24,7 @@ export default function Experience() {
     },
     {
       job: "Mobile applications developer",
-      company: "Arabic Computer Systems",
+      company: "Qassim Municipality",
       time: "2023/09 - Present",
       info: [
         "Developing applications with Flutter for android & iphone.",
@@ -41,7 +41,7 @@ export default function Experience() {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.0)
     ),
-    url("https://t3.ftcdn.net/jpg/01/85/75/08/360_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg")`}
+    url("background.jpg")`}
         // h={["200px", "700px"]}
         p={"4%"}
         // color="white"
@@ -51,85 +51,100 @@ export default function Experience() {
       >
         <Title title="Experience" />
         <code>
-          <SimpleGrid columns={[2]} spacing={10}>
-            <Box p="4%">
-              <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
-                {items[2].job}
-              </Heading>
+          <Grid
+            templateColumns="repeat(3, 1fr)" // تقسيم الشبكة إلى 3 أعمدة متساوية
+            // gap={4}
+          >
+            <GridItem colSpan={2}>
+              <Box p="4%">
+                <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
+                  {items[2].job}
+                </Heading>
 
-              <hr style={{ color: "white" }} />
-              <Box marginTop={"4%"}>
-                {items[2].info.map((item) => (
-                  <li>{item}</li>
-                ))}
+                <hr style={{ color: "white" }} />
+                <Box marginTop={"4%"}>
+                  {items[2].info.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </Box>
               </Box>
-            </Box>
-            <Box
-              borderWidth="medium"
-              borderStyle=" none none none solid"
-              borderColor={"gold"}
-              //height="80px"
-              p="3%"
-              color={"gold"}
-            >
-              <Heading fontSize="300%">3</Heading>
-              <Heading fontSize="100%"> {items[2].company} company</Heading>
-              <Heading>({items[2].time})</Heading>
-            </Box>
-            <Box
-              borderWidth="medium"
-              borderStyle=" none solid none none"
-              borderColor={"gold"}
-              //height="80px"
-              p="3%"
-              color={"gold"}
-            >
-              <Heading textAlign={"right"} fontSize="300%">
-                2
-              </Heading>
-              <Heading textAlign={"right"} fontSize="100%">
-                {" "}
-                {items[1].company} company
-              </Heading>
-              <Heading textAlign={"right"}>({items[1].time})</Heading>
-            </Box>
-            <Box p="4%">
-              <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
-                {items[1].job}
-              </Heading>
+            </GridItem>
+            <GridItem colSpan={1}>
+              <Box
+                borderWidth="medium"
+                borderStyle=" none none none solid"
+                borderColor={"gold"}
+                //height="80px"
+                paddingLeft="3%"
+                color={"gold"}
+              >
+                <Heading fontSize="300%">3</Heading>
+                <Heading fontSize="100%"> {items[2].company} company</Heading>
+                <Heading>({items[2].time})</Heading>
+              </Box>
+            </GridItem>
+            <GridItem colSpan={1}>
+              <Box
+                borderWidth="medium"
+                borderStyle=" none solid none none"
+                borderColor={"gold"}
+                //height="80px"
+                p="3%"
+                color={"gold"}
+              >
+                <Heading textAlign={"right"} fontSize="300%">
+                  2
+                </Heading>
+                <Heading textAlign={"right"} fontSize="100%">
+                  {" "}
+                  {items[1].company} company
+                </Heading>
+                <Heading textAlign={"right"}>({items[1].time})</Heading>
+              </Box>
+            </GridItem>
+            <GridItem colSpan={2}>
+              <Box p="4%">
+                <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
+                  {items[1].job}
+                </Heading>
 
-              <hr style={{ color: "white" }} />
-              <Box marginTop={"4%"}>
-                {items[1].info.map((item) => (
-                  <li>{item}</li>
-                ))}
+                <hr style={{ color: "white" }} />
+                <Box marginTop={"4%"}>
+                  {items[1].info.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </Box>
               </Box>
-            </Box>
-            <Box p="4%">
-              <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
-                {items[0].job}
-              </Heading>
+            </GridItem>
+            <GridItem colSpan={2}>
+              <Box p="4%">
+                <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
+                  {items[0].job}
+                </Heading>
 
-              <hr style={{ color: "white" }} />
-              <Box marginTop={"4%"}>
-                {items[0].info.map((item) => (
-                  <li>{item}</li>
-                ))}
+                <hr style={{ color: "white" }} />
+                <Box marginTop={"4%"}>
+                  {items[0].info.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </Box>
               </Box>
-            </Box>
-            <Box
-              borderWidth="medium"
-              borderStyle=" none none none solid"
-              borderColor={"gold"}
-              //height="80px"
-              p="3%"
-              color={"gold"}
-            >
-              <Heading fontSize="300%">1</Heading>
-              <Heading fontSize="100%"> {items[0].company} company</Heading>
-              <Heading>({items[0].time})</Heading>
-            </Box>
-          </SimpleGrid>
+            </GridItem>
+            <GridItem colSpan={1}>
+              <Box
+                borderWidth="medium"
+                borderStyle=" none none none solid"
+                borderColor={"gold"}
+                //height="80px"
+                p="3%"
+                color={"gold"}
+              >
+                <Heading fontSize="300%">1</Heading>
+                <Heading fontSize="100%"> {items[0].company} company</Heading>
+                <Heading>({items[0].time})</Heading>
+              </Box>
+            </GridItem>
+          </Grid>
         </code>
       </Box>
     </>

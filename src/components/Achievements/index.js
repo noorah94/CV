@@ -1,8 +1,9 @@
 import { Box, Image, Heading } from "@chakra-ui/react";
-import React from "react";
+
 import Title from "../Title";
 import "./style.css";
 import { CgExternal } from "react-icons/cg";
+import { Flex, Text, VStack, useBreakpointValue } from "@chakra-ui/react";
 
 export default function Achievements() {
   const items = [
@@ -44,7 +45,7 @@ export default function Achievements() {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.0)
     ),
-    url("https://t3.ftcdn.net/jpg/01/85/75/08/360_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg")`}
+    url("background.jpg")`}
         //h={["200px", "700px"]}
         p={"4%"}
         // color="white"
@@ -53,47 +54,57 @@ export default function Achievements() {
         backgroundSize="cover"
       >
         <Title title="Achievements" />
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Rank</th>
-          </tr>
-          {items.map((item) => (
-            <tr>
-              <td style={{ width: "20%" }}>
-                {" "}
-                {item.name} in {item.placeName}
-              </td>
-              <td style={{ width: "70%" }}>{item.info}</td>
-              <td style={{}}>
-                <Image src="https://media.baamboozle.com/uploads/images/128794/1631114455_153950_gif-url.gif" />
-              </td>
-            </tr>
-          ))}
-        </table>
-        {/* <TableContainer w="100%">
-          <Table variant="simple" w="100%">
-            <Thead border="1px solid #ddd">
-              <Tr>
-                <Th>Name</Th>
-                <Th w="10%">Description</Th>
-                <Th>Rank</Th>
-              </Tr>
-            </Thead>
-            <Tbody border="1px solid #ddd">
-              {items.map((item) => (
-                <Tr>
-                  <Td>
+        {useBreakpointValue({ base: true, md: false }) ? (
+          <VStack spacing={4} w="90%" mx="auto" mt="3%">
+            {items.map((item, index) => (
+              <Box
+                key={index}
+                p={5}
+                shadow="md"
+                borderWidth="1px"
+                borderRadius="lg"
+                w="100%"
+                // bg="white"
+              >
+                <Flex direction="column" gap={2}>
+                  <Text>
+                    <p>
+                      {" "}
+                      <b>Name:</b>{" "}
+                    </p>
                     {item.name} in {item.placeName}
-                  </Td>
-                  <Td w="10%">{item.info}</Td>
-                  <Td>25.4</Td>
-                </Tr>
-              ))}
-            </Tbody>
-          </Table>
-        </TableContainer> */}
+                  </Text>
+                  <Text>
+                    <b>Description:</b> {item.info}
+                  </Text>
+                  <Text>
+                    <b>Rank:</b> <Image src="rank.gif" w={"30%"} />
+                  </Text>
+                </Flex>
+              </Box>
+            ))}
+          </VStack>
+        ) : (
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Rank</th>
+            </tr>
+            {items.map((item) => (
+              <tr>
+                <td style={{ width: "20%" }}>
+                  {" "}
+                  {item.name} in {item.placeName}
+                </td>
+                <td style={{ width: "70%" }}>{item.info}</td>
+                <td style={{}}>
+                  <Image src="rank.gif" />
+                </td>
+              </tr>
+            ))}
+          </table>
+        )}
       </Box>
     </>
   );

@@ -24,7 +24,7 @@ function Footer() {
           </SimpleGrid>
         </Center>
 
-        <Box>Noorah Almohaimeed © 2023</Box>
+        <Box>Noorah Almohaimeed © 2026</Box>
       </SimpleGrid>
     </Center>
   );

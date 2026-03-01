@@ -1,20 +1,18 @@
-import {
-  SimpleGrid,
-  Box,
-  Heading,
-  Flex,
-  Badge,
-  Grid,
-  GridItem,
-} from "@chakra-ui/react";
-import React from "react";
+import { SimpleGrid, Box, Heading, Flex, Badge } from "@chakra-ui/react";
 import Title from "../Title";
-import { BsGithub, BsLink45Deg } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import { CgExternal } from "react-icons/cg";
 
 export default function Projects() {
   //Qassim Municipality
   const itmes = [
+    {
+      title: "Platforms Code Builder",
+      link: "https://n-builder-fxzy.vercel.app",
+      github: "none",
+      tools: ["Next.js", "React"],
+    },
+
     {
       title: "Qassim Municipality Application (iOS)",
       link: "https://apps.apple.com/us/app/%D8%A3%D9%85%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%82%D8%B5%D9%8A%D9%85/id997312328?ls=1",
@@ -26,6 +24,18 @@ export default function Projects() {
       link: "https://play.google.com/store/apps/details?id=sa.gov.qassim",
       github: "none",
       tools: ["Flutter"],
+    },
+    {
+      title: "IT Assest Dashboard",
+      link: "https://itassestdashboard.onrender.com",
+      github: "none",
+      tools: ["React"],
+    },
+    {
+      title: "IT Assest Dashboard Backend",
+      link: "https://itassestdashboardbackend.onrender.com/index.html",
+      github: "none",
+      tools: [".NET API"],
     },
     {
       title: "Weejhaty website",
@@ -105,7 +115,7 @@ export default function Projects() {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.0)
     ),
-    url("https://t3.ftcdn.net/jpg/01/85/75/08/360_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg")`}
+    url("background.jpg")`}
       // h={["200px", "700px"]}
       p={"4%"}
       // color="white"
@@ -164,14 +174,14 @@ export default function Projects() {
                   </>
                 )}
               </Box>{" "}
-              <Flex p="1%">
+              <Flex p="1%" gap={1} flexWrap="wrap">
                 <Heading fontWeight={"bold"}>Tools: </Heading>
 
                 {/* {progarmming[index]} */}
                 {item.tools.map((item, ind) => (
                   <>
                     <Badge
-                      borderRadius="full"
+                      borderRadius="lg"
                       px="2"
                       bg="#9540AC"
                       textShadow="1px 1px #ff0000"

@@ -48,7 +48,7 @@ export default function Education() {
     <Box
       bg={`
      
-    url("https://t3.ftcdn.net/jpg/01/85/75/08/360_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg")`}
+    url("background.jpg")`}
       w="100%"
       //h={["200px", "700px"]}
       p={"4%"}
@@ -66,14 +66,14 @@ export default function Education() {
                 <Heading fontSize={["200%", "300%"]} fontWeight="bold">
                   0{index + 1}.
                 </Heading>
-                <Box fontSize={["80%", "150%"]} fontWeight="bold">
+                <Box fontSize={["90%", "150%"]} fontWeight="bold">
                   {item.name}{" "}
                 </Box>
-                <Box display="flex" fontSize={["60%", "150%"]}>
+                <Box display="flex" fontSize={["80%", "150%"]}>
                   <Box>( {item.grade} )</Box>
                   <Box> - {item.university} </Box>
                 </Box>
-                <Box p={"6%"} fontSize={["60%", "150%"]}>
+                <Box p={"6%"} fontSize={["80%", "150%"]}>
                   {item.desc}
                 </Box>
               </Box>

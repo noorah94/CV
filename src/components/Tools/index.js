@@ -5,15 +5,24 @@ import logo from "../../logo.svg";
 export default function Tools() {
   const tools = [
     "Flutter",
-    "Firebase",
     "React",
+    ".NET API",
     "Express.js",
     "MongoDB",
     "SQL",
     "SQLite",
+    "Firebase",
     "React native",
   ];
-  const progarmming = ["javascript", "dart", "python", "java", "c++", "c#"];
+  const progarmming = [
+    "dart",
+    "Typescript",
+    "javascript",
+    "python",
+    "c#",
+    "java",
+    "c++",
+  ];
 
   const [index, setIndex] = useState(0);
   useEffect(() => {
@@ -29,14 +38,19 @@ export default function Tools() {
   });
   return (
     <>
-      <Flex marginTop={"3%"} w="60%">
+      <Flex
+        marginTop={["5%", "3%"]}
+        w={["100%", "60%"]}
+        gap={1}
+        flexWrap="wrap"
+      >
         Tools:
         {/* {progarmming[index]} */}
         {tools.map((item, ind) => (
           <>
-            <Spacer />
+            {/* <Spacer /> */}
             <Badge
-              borderRadius="full"
+              borderRadius="lg"
               px="2"
               bg="#9540AC"
               textShadow="1px 1px #ff0000"
@@ -46,13 +60,18 @@ export default function Tools() {
           </>
         ))}
       </Flex>
-      <Flex marginTop={"2%"} w="50%">
+      <Flex
+        marginTop={["5%", "2%"]}
+        w={["100%", "60%"]}
+        gap={1}
+        flexWrap="wrap"
+      >
         Programming language:
         {progarmming.map((item) => (
           <>
-            <Spacer />
+            {/* <Spacer /> */}
             <Badge
-              borderRadius="full"
+              borderRadius="lg"
               px="2"
               bg="#9540AC"
               textShadow="1px 1px #ff0000"
