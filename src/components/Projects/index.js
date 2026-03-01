@@ -26,6 +26,12 @@ export default function Projects() {
       tools: ["Flutter"],
     },
     {
+      title: "Khadamaty Application (iOS & android)",
+      link: "https://services.qassim.gov.sa/apps/",
+      github: "none",
+      tools: ["Flutter"],
+    },
+    {
       title: "IT Assest Dashboard",
       link: "https://itassestdashboard.onrender.com",
       github: "none",
