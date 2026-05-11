@@ -25,7 +25,7 @@ export default function Experience() {
     {
       job: "Mobile applications developer",
       company: "Qassim Municipality",
-      time: "2023/09 - Present",
+      time: "2023/09 - 2026/02",
       info: [
         "Developing applications with Flutter for android & iphone.",
         "Developing with google map, rest APIs, local storage, state management, animation and other.",
