@@ -1,56 +1,49 @@
-//import logo from "./logo.svg";
-import "./App.css";
-import Desc from "./components/Desc";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Tools from "./components/Tools";
-import Education from "./components/Education";
-import Contact from "./components/Contact";
-import { Routes, Route } from "react-router-dom";
-import { VStack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { MotionConfig } from "framer-motion";
+import { initSmoothScroll, stopScroll } from "./lib/smoothScroll";
+import Scene from "./components/Scene";
+import Loader from "./components/Loader";
+import Nav from "./components/Nav";
+import Cursor from "./components/Cursor";
+import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
+import About from "./components/About";
+import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Achievements from "./components/Achievements";
-import Experience from "./components/Experience";
-import Camps from "./components/Camps";
-import MBS from "./components/MBS";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
 
 function App() {
-  let components = [<Header />, <Desc />, <Tools />, <Education />, <Footer />];
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => initSmoothScroll(), []);
+
+  useEffect(() => {
+    document.body.classList.toggle("is-loading", !loaded);
+    stopScroll(!loaded);
+  }, [loaded]);
+
   return (
-    <div>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              {/* <MBS /> */}
-              <Desc />
-              <Education /> <Achievements /> <Experience /> <Projects />
-              {/* <Contact /> */}
-              <Footer />
-            </>
-          }
-        />
-      </Routes>
-    </div>
+    <MotionConfig reducedMotion="user">
+      <Scene />
+      <div className="vignette" />
+      <Loader onDone={() => setLoaded(true)} />
+      <Cursor />
+      <Nav />
+      <main>
+        <Hero ready={loaded} />
+        <Marquee />
+        <About />
+        <Experience />
+        <Projects />
+        <Achievements />
+        <Education />
+        <Contact />
+      </main>
+      <div className="grain" aria-hidden="true" />
+    </MotionConfig>
   );
 }
 
 export default App;
-// <div className="App">
-//   <header className="App-header">
-//     <img src={logo} className="App-logo" alt="logo" />
-//     <p>
-//       Edit <code>src/App.js</code> and save to reload.
-//     </p>
-//     <a
-//       className="App-link"
-//       href="https://reactjs.org"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//     >
-//       Learn React
-//     </a>
-//   </header>
-// </div>

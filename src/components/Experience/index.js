@@ -1,152 +1,70 @@
-import React from "react";
-import { SimpleGrid, Box, Heading, Grid, GridItem } from "@chakra-ui/react";
-import Title from "../Title";
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { experience } from "../../data/profile";
+import SectionHeading from "../SectionHeading";
+import Star from "../Star";
+import "./style.css";
+
+const ease = [0.16, 1, 0.3, 1];
 
 export default function Experience() {
-  const items = [
-    {
-      job: "Technical Support",
-      company: "New Horizons Institute",
-      time: "2016/07 - 2016/09",
-      info: [
-        "A collaborative training when I was studying at Qassim University and its duration was 8 weeks.",
-        "Maintenance of computers, download the required software and format the computers.",
-      ],
-    },
-    {
-      job: "Mobile applications developer",
-      company: "T2",
-      time: "2023/03 - 2023/07",
-      info: [
-        "Developing applications with Flutter for android & iphone.",
-        "Developing with Firebase, rest APIs, local storage and animation.",
-      ],
-    },
-    {
-      job: "Mobile applications developer",
-      company: "Qassim Municipality",
-      time: "2023/09 - 2026/02",
-      info: [
-        "Developing applications with Flutter for android & iphone.",
-        "Developing with google map, rest APIs, local storage, state management, animation and other.",
-        "Upload applications to App Store and Google Play.",
-        "Create solutions to solve cybersecurity attacks.",
-      ],
-    },
-  ];
+  const listRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: listRef, offset: ["start 70%", "end 60%"] });
+  const fill = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+
   return (
-    <>
-      <Box
-        bg={`linear-gradient(0deg,
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.0)
-    ),
-    url("background.jpg")`}
-        // h={["200px", "700px"]}
-        p={"4%"}
-        // color="white"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        backgroundSize="cover"
-      >
-        <Title title="Experience" />
-        <code>
-          <Grid
-            templateColumns="repeat(3, 1fr)" // تقسيم الشبكة إلى 3 أعمدة متساوية
-            // gap={4}
-          >
-            <GridItem colSpan={2}>
-              <Box p="4%">
-                <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
-                  {items[2].job}
-                </Heading>
+    <section id="experience" className="section" data-scene="2,-5,0.3">
+      <div className="container">
+        <SectionHeading index="02" label="Experience" ar="الخبرات" title="Where I've *shipped* real products." />
 
-                <hr style={{ color: "white" }} />
-                <Box marginTop={"4%"}>
-                  {items[2].info.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </Box>
-              </Box>
-            </GridItem>
-            <GridItem colSpan={1}>
-              <Box
-                borderWidth="medium"
-                borderStyle=" none none none solid"
-                borderColor={"gold"}
-                //height="80px"
-                paddingLeft="3%"
-                color={"gold"}
-              >
-                <Heading fontSize="300%">3</Heading>
-                <Heading fontSize="100%"> {items[2].company} company</Heading>
-                <Heading>({items[2].time})</Heading>
-              </Box>
-            </GridItem>
-            <GridItem colSpan={1}>
-              <Box
-                borderWidth="medium"
-                borderStyle=" none solid none none"
-                borderColor={"gold"}
-                //height="80px"
-                p="3%"
-                color={"gold"}
-              >
-                <Heading textAlign={"right"} fontSize="300%">
-                  2
-                </Heading>
-                <Heading textAlign={"right"} fontSize="100%">
-                  {" "}
-                  {items[1].company} company
-                </Heading>
-                <Heading textAlign={"right"}>({items[1].time})</Heading>
-              </Box>
-            </GridItem>
-            <GridItem colSpan={2}>
-              <Box p="4%">
-                <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
-                  {items[1].job}
-                </Heading>
+        <div className="timeline" ref={listRef}>
+          <div className="timeline__track" aria-hidden="true">
+            <motion.div className="timeline__fill" style={{ scaleY: fill }} />
+          </div>
+          <ol className="timeline__list">
 
-                <hr style={{ color: "white" }} />
-                <Box marginTop={"4%"}>
-                  {items[1].info.map((item) => (
-                    <li>{item}</li>
-                  ))}
-                </Box>
-              </Box>
-            </GridItem>
-            <GridItem colSpan={2}>
-              <Box p="4%">
-                <Heading fontSize={["120%", "200%"]} fontWeight={"bold"}>
-                  {items[0].job}
-                </Heading>
+          {experience.map((job, i) => (
+            <motion.li
+              key={job.company}
+              className="timeline__item"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, ease }}
+            >
+              <div className="timeline__meta">
+                <span className="timeline__period mono">{job.period}</span>
+                <span className="timeline__company">{job.company}</span>
+              </div>
 
-                <hr style={{ color: "white" }} />
-                <Box marginTop={"4%"}>
-                  {items[0].info.map((item) => (
-                    <li>{item}</li>
+              <div className="timeline__node" aria-hidden="true">
+                <Star />
+              </div>
+
+              <article className="timeline__card glass">
+                <span className="timeline__no mono">{String(experience.length - i).padStart(2, "0")}</span>
+                <h3>{job.role}</h3>
+                <p className="timeline__company--inline mono">
+                  {job.company} · {job.period}
+                </p>
+                <ul>
+                  {job.points.map((point) => (
+                    <li key={point}>{point}</li>
                   ))}
-                </Box>
-              </Box>
-            </GridItem>
-            <GridItem colSpan={1}>
-              <Box
-                borderWidth="medium"
-                borderStyle=" none none none solid"
-                borderColor={"gold"}
-                //height="80px"
-                p="3%"
-                color={"gold"}
-              >
-                <Heading fontSize="300%">1</Heading>
-                <Heading fontSize="100%"> {items[0].company} company</Heading>
-                <Heading>({items[0].time})</Heading>
-              </Box>
-            </GridItem>
-          </Grid>
-        </code>
-      </Box>
-    </>
+                </ul>
+                <div className="timeline__tags">
+                  {job.tags.map((tag) => (
+                    <span className="chip" key={tag}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </motion.li>
+          ))}
+          </ol>
+        </div>
+      </div>
+    </section>
   );
 }

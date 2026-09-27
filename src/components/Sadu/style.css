@@ -1,0 +1,12 @@
+.sadu {
+  height: 28px;
+  opacity: 0.85;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath d='M0 0h56v2H0zM0 26h56v2H0z' fill='%23e6bd6f'/%3E%3Cpath d='M0 4l7 7 7-7 7 7 7-7 7 7 7-7 7 7 7-7v2l-7 7-7-7-7 7-7-7-7 7-7-7-7 7-7-7z' fill='%230b8a4f'/%3E%3Cpath d='M28 8l6 6-6 6-6-6z' fill='%23e6bd6f'/%3E%3Cpath d='M28 11l3 3-3 3-3-3z' fill='%23020806'/%3E%3Cpath d='M0 8l6 6-6 6zM56 8l-6 6 6 6z' fill='%2312d98a'/%3E%3Cpath d='M0 24l7-7 7 7 7-7 7 7 7-7 7 7 7-7 7 7v-2l-7-7-7 7-7-7-7 7-7-7-7 7-7-7-7 7z' fill='%230b8a4f'/%3E%3C/svg%3E");
+  background-size: 56px 28px;
+  background-repeat: repeat-x;
+  animation: sadu-drift 30s linear infinite;
+}
+
+@keyframes sadu-drift {
+  to { background-position: 560px 0; }
+}

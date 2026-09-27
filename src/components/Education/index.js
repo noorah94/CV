@@ -1,87 +1,52 @@
-import { Box, Heading, Flex, Text, Spacer } from "@chakra-ui/react";
-import React from "react";
-import Title from "../Title";
-import { CgExternal } from "react-icons/cg";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import { education } from "../../data/profile";
+import SectionHeading from "../SectionHeading";
+import "./style.css";
+
+const ease = [0.16, 1, 0.3, 1];
 
 export default function Education() {
-  const items = [
-    {
-      name: "Bachelor of information technology",
-      grade: "4.5 out of 5",
-      university: "Qassim University",
-      desc: (
-        <>
-          - With second class honors.
-          <br />- Graduation date: 2018-05-17.
-        </>
-      ),
-    },
-    {
-      name: "One semester in master of computer science",
-      grade: "5 out of 5 ",
-      university: "Qassim University",
-      desc: (
-        <>
-          - 9 hours and semester date: 2020. <br />
-          <Box display="flex">
-            - Projects:
-            <Heading fontSize="70%">
-              <a href="https://drive.google.com/drive/folders/1P_ZNDS6grg_Xxsrt-jcAieFuEREdnMaE?sp=sharing">
-                click here
-              </a>
-            </Heading>
-            <CgExternal />
-          </Box>
-          <br />
-        </>
-      ),
-    },
-  ];
-  //https://wallpapers.com/images/hd/purple-texture-background-4isfyxdqkvy3006f.jpg
-  //https://i.pinimg.com/originals/6e/0f/d6/6e0fd69a36ee8bbf9504f3132c79faff.jpg
-
-  //  linear-gradient(0deg,
-  //     rgba(0, 0, 0, 0.90),
-  //     rgba(0, 0, 0, 0.10)),
-
   return (
-    <Box
-      bg={`
-     
-    url("background.jpg")`}
-      w="100%"
-      //h={["200px", "700px"]}
-      p={"4%"}
-      // color="white"
-      backgroundPosition="center"
-      backgroundRepeat="no-repeat"
-      backgroundSize="cover"
-    >
-      <Title title={"Education"} />
-      <code>
-        <Box p="5%" display={["block", "flex"]}>
-          {items.map((item, index) => (
-            <>
-              <Box w={["90%", "40%"]}>
-                <Heading fontSize={["200%", "300%"]} fontWeight="bold">
-                  0{index + 1}.
-                </Heading>
-                <Box fontSize={["90%", "150%"]} fontWeight="bold">
-                  {item.name}{" "}
-                </Box>
-                <Box display="flex" fontSize={["80%", "150%"]}>
-                  <Box>( {item.grade} )</Box>
-                  <Box> - {item.university} </Box>
-                </Box>
-                <Box p={"6%"} fontSize={["80%", "150%"]}>
-                  {item.desc}
-                </Box>
-              </Box>
-              <Spacer />
-            </>
+    <section id="education" className="section" data-scene="1,4.2,0.4">
+      <div className="container">
+        <SectionHeading index="05" label="Education" ar="التعليم" title="Grounded in *computer* science." />
+
+        <div className="edu">
+          {education.map((item, i) => (
+            <motion.article
+              key={item.degree}
+              className="edu__card glass"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1, delay: i * 0.12, ease }}
+            >
+              <div className="edu__top">
+                <span className="mono edu__no">0{i + 1}</span>
+                <span className="edu__grade">
+                  {item.grade}
+                  <small className="mono">GPA</small>
+                </span>
+              </div>
+              <h3>{item.degree}</h3>
+              <p className="edu__school">{item.school}</p>
+              <div className="edu__details">
+                {item.details.map((d) => (
+                  <span className="chip" key={d}>
+                    {d}
+                  </span>
+                ))}
+              </div>
+              {item.link && (
+                <a className="edu__link" href={item.link} target="_blank" rel="noopener noreferrer">
+                  Coursework projects <FiArrowUpRight />
+                </a>
+              )}
+            </motion.article>
           ))}
-        </Box>
-      </code>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 }

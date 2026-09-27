@@ -1,111 +1,60 @@
-import { Box, Image, Heading } from "@chakra-ui/react";
-
-import Title from "../Title";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import { achievements } from "../../data/profile";
+import SectionHeading from "../SectionHeading";
+import Star from "../Star";
 import "./style.css";
-import { CgExternal } from "react-icons/cg";
-import { Flex, Text, VStack, useBreakpointValue } from "@chakra-ui/react";
+
+const ease = [0.16, 1, 0.3, 1];
 
 export default function Achievements() {
-  const items = [
-    {
-      name: "Graduation project - A Mobile Device Pattern Password for Elderly and Blindly People Using Camouflage Patterns",
-      placeName: "Qassim University",
-      rank: 1,
-      info: (
-        <>
-          <li>
-            Participated in Takaful competition and the project got the first
-            place in the competition.
-          </li>
-          <li>
-            Graduation Project: It has been building a new authentication system
-            against the Shoulder Surfing attack and 9 Android versions were
-            designed to increase security and usability. After that, enhanced
-            versions of the system have been created for the elderly and blind
-            people to know the quality of security and usability of the system
-            and testing the system on various segments of society.
-          </li>
-          <Box display="flex">
-            <li>More info about project: </li>
-            <Heading fontSize="70%">
-              <a href="https://drive.google.com/drive/folders/138dbHiiainHHvy_OrpSAInSYPSWdjfA1?usp=sharing">
-                click here
-              </a>
-            </Heading>
-            <CgExternal />
-          </Box>
-        </>
-      ),
-    },
-  ]; //https://media.baamboozle.com/uploads/images/128794/1631114455_153950_gif-url.gif
   return (
-    <>
-      <Box
-        bg={`linear-gradient(0deg,
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.0)
-    ),
-    url("background.jpg")`}
-        //h={["200px", "700px"]}
-        p={"4%"}
-        // color="white"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        backgroundSize="cover"
-      >
-        <Title title="Achievements" />
-        {useBreakpointValue({ base: true, md: false }) ? (
-          <VStack spacing={4} w="90%" mx="auto" mt="3%">
-            {items.map((item, index) => (
-              <Box
-                key={index}
-                p={5}
-                shadow="md"
-                borderWidth="1px"
-                borderRadius="lg"
-                w="100%"
-                // bg="white"
-              >
-                <Flex direction="column" gap={2}>
-                  <Text>
-                    <p>
-                      {" "}
-                      <b>Name:</b>{" "}
-                    </p>
-                    {item.name} in {item.placeName}
-                  </Text>
-                  <Text>
-                    <b>Description:</b> {item.info}
-                  </Text>
-                  <Text>
-                    <b>Rank:</b> <Image src="rank.gif" w={"30%"} />
-                  </Text>
-                </Flex>
-              </Box>
-            ))}
-          </VStack>
-        ) : (
-          <table>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Rank</th>
-            </tr>
-            {items.map((item) => (
-              <tr>
-                <td style={{ width: "20%" }}>
-                  {" "}
-                  {item.name} in {item.placeName}
-                </td>
-                <td style={{ width: "70%" }}>{item.info}</td>
-                <td style={{}}>
-                  <Image src="rank.gif" />
-                </td>
-              </tr>
-            ))}
-          </table>
-        )}
-      </Box>
-    </>
+    <section id="awards" className="section" data-scene="0,-4.2,0.35">
+      <div className="container">
+        <SectionHeading index="04" label="Achievements" ar="الإنجازات" title="Recognised for *secure* design." />
+
+        {achievements.map((item) => (
+          <motion.article
+            key={item.title}
+            className="award"
+            initial={{ opacity: 0, y: 60, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.1, ease }}
+          >
+            <div className="award__medal" aria-hidden="true">
+              <div className="award__rays" />
+              <Star className="award__star" />
+              <span className="award__rank">
+                {item.rank}
+                <sup>st</sup>
+              </span>
+            </div>
+
+            <div className="award__body">
+              <p className="award__title mono">{item.title}</p>
+              <h3>{item.project}</h3>
+              <p className="award__place">{item.place}</p>
+              <ul>
+                {item.points.map((point, i) => (
+                  <motion.li
+                    key={point}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 + i * 0.1, ease }}
+                  >
+                    {point}
+                  </motion.li>
+                ))}
+              </ul>
+              <a className="btn btn--ghost" href={item.link} target="_blank" rel="noopener noreferrer">
+                Project files <FiArrowUpRight />
+              </a>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -1,0 +1,51 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 28px;
+  background: var(--bg);
+  clip-path: inset(0 0 0 0);
+}
+
+.loader__star {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  color: var(--green);
+  filter: drop-shadow(0 0 18px rgba(18, 217, 138, 0.6));
+}
+
+.loader__ar {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  color: var(--sand);
+  direction: rtl;
+}
+
+.loader__meta {
+  display: flex;
+  gap: 24px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.loader__bar {
+  width: min(260px, 70vw);
+  height: 1px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.loader__bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  transform-origin: left;
+}
